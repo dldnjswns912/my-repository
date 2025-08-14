@@ -1,0 +1,79 @@
+name: WEB CI/CD
+
+on:
+  push:
+    branches:
+      - dev
+
+env:
+  ECR_REGISTRY: 087854249278.dkr.ecr.ap-northeast-2.amazonaws.com # ECR 저장소 주소
+  ECR_REPOSITORY: jakdanglabs/web  # ECR 리포지토리 네임
+  ECR_IMAGE_TAG: DEV
+  ECR_REGION: ap-northeast-2
+  IMAGE_NAME: jakdang-web # 이미지 이름 설정
+  CONTAINER_NAME: jakdang-web # 컨테이너 이름 설정
+  CONTAINER_PORT_IN: 4173 # 포트 설정
+  CONTAINER_PORT: 80 # 포트 설정
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.ECR_REGION }}
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v1
+
+      - name: Build, tag, and push image to Amazon ECR
+        id: build-image
+        run: |
+          docker build \
+            -t $ECR_REGISTRY/$ECR_REPOSITORY:$ECR_IMAGE_TAG \
+            -f Dockerfile.dev .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$ECR_IMAGE_TAG
+          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$ECR_IMAGE_TAG"
+
+  deploy:
+    runs-on: [ self-hosted, gcp-dev-server ]
+    needs: build
+
+    steps:
+      - name: Login to Amazon ECR
+        run: |
+          aws ecr get-login-password --region ${{ env.ECR_REGION }} | docker login --username AWS --password-stdin ${{ env.ECR_REGISTRY }}
+
+      - name: Pull latest image
+        run: |
+          docker pull ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.ECR_IMAGE_TAG }}
+          docker tag ${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.ECR_IMAGE_TAG }} ${{ env.IMAGE_NAME }}
+
+      - name: Stop and remove existing container
+        run: |
+          docker stop ${{ env.CONTAINER_NAME }} || true
+          docker rm ${{ env.CONTAINER_NAME }} || true
+
+      - name: Deploy new container
+        run: |
+          docker run -d --restart always \
+            --name ${{ env.CONTAINER_NAME }} \
+            -p ${{ env.CONTAINER_PORT_IN }}:${{ env.CONTAINER_PORT }} \
+            ${{ env.IMAGE_NAME }}
+
+      - name: Clean up
+        run: docker image prune -f
+
+      - name: Verify deployment
+        run: |
+          sleep 10
+          docker ps | grep ${{ env.CONTAINER_NAME }}
+          echo "배포가 성공적으로 완료되었습니다"

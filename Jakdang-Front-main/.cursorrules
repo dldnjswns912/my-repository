@@ -1,0 +1,59 @@
+{
+  "project_name": "Jakdang Front",
+  "state_management": {
+    "library": "jotai",
+    "rules": [
+      "전역 상태는 반드시 Jotai 사용",
+      "상태 atom은 관련 도메인 폴더에 위치",
+      "인증 관련 상태는 authAtoms.js에서 관리"
+    ]
+  },
+  "api_communication": {
+    "hooks": "useAxios",
+    "environment": "import.meta.env",
+    "rules": [
+      "API 호출은 useAxios 훅 사용",
+      "환경변수는 .env 파일에서 관리",
+      "API URL은 환경변수로 관리 (VITE_API_URL)"
+    ]
+  },
+  "authentication": {
+    "type": "token-based",
+    "providers": ["Google", "Kakao", "Naver", "Apple"],
+    "rules": [
+      "토큰 기반 인증 사용 (accessToken)",
+      "사용자 정보는 별도로 관리"
+    ]
+  },
+  "styling": {
+    "framework": "tailwindcss",
+    "ui_library": "shadcn/ui",
+    "rules": [
+      "Tailwind CSS 클래스 사용",
+      "UI 컴포넌트는 shadcn/ui 사용",
+      "커스텀 스타일은 필요한 경우에만 사용"
+    ]
+  },
+  "routing": {
+    "library": "react-router",
+    "rules": [
+      "페이지 이동은 useNavigate 훅 사용",
+      "라우트 정의는 routes 폴더에서 관리"
+    ]
+  },
+  "directory_structure": {
+    "components": "재사용 가능한 컴포넌트",
+    "hooks": "커스텀 훅",
+    "lib": "유틸리티 및 설정",
+    "jotai": "상태 관리",
+    "routes": "라우팅 설정",
+    "pages": "페이지 컴포넌트"
+  },
+  "development_guidelines": {
+    "component_development": [
+      "재사용 가능한 컴포넌트는 components 폴더에 위치",
+      "페이지 컴포넌트는 pages 폴더에 위치",
+      "UI 컴포넌트는 가능한 shadcn/ui 활용"
+    ]
+  }
+} 

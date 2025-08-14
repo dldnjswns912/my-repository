@@ -1,0 +1,317 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+/*@import url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css');*/
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
+}
+/*@layer base {*/
+/*  html {*/
+/*    font-family: "NanumSquare", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;*/
+/*  }*/
+/*}*/
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+  
+  /* 채팅 앱 전용 색상 */
+  --chat-primary: #0084ff;
+  --chat-secondary: #f0f2f5;
+  --chat-accent: #00c6ff;
+  --chat-light: #e9f3ff;
+  --chat-dark: #3e4042;
+  --chat-read: #34b7f1;
+  --chat-online: #31a24c;
+  --chat-hover: #f2f2f2;
+  --chat-darkHover: #2d2d2d;
+  --radius-chat: 18px;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+  
+  /* 채팅 앱 전용 다크모드 색상 */
+  --chat-primary: #0084ff;
+  --chat-secondary: #1e1e1e;
+  --chat-accent: #00c6ff;
+  --chat-light: #1a3152;
+  --chat-dark: #e4e6eb;
+  --chat-read: #34b7f1;
+  --chat-online: #31a24c;
+  --chat-hover: #2d2d2d;
+  --chat-darkHover: #3a3a3a;
+}
+
+@theme inline {
+  --color-navy-50: #f0f4f9;
+  --color-navy-100: #d9e2f0;
+  --color-navy-200: #b3c5e1;
+  --color-navy-300: #8da8d2;
+  --color-navy-400: #668bc3;
+  --color-navy-500: #406eb4;
+  /*--color-navy-600: #335890;*/
+  /*--color-navy-700: #26426c;*/
+
+  --color-navy-600: #FFC107;
+  --color-navy-700: #FFB300;
+
+  --color-navy-800: #1a2c48;
+  --color-navy-900: #0d1624;
+
+  --color-blue-600: #0284c7;
+
+  /*--color-navy-50:  #e8edf5;*/
+  /*--color-navy-100: #cfd9eb;*/
+  /*--color-navy-200: #a3b5d7;*/
+  /*--color-navy-300: #7890c3;*/
+  /*--color-navy-400: #4c6caf;*/
+  /*!*--color-navy-500: #20479b;*!*/
+  /*!*--color-navy-500: #ffc300;*!*/
+  /*--color-navy-500: #FFC107;*/
+  /*!*--color-navy-600: #001F54; !* 기준색 *!*!*/
+  /*--color-navy-600: #FFC107; !* 기준색 *!*/
+  /*--color-navy-700: #001943;*/
+  /*--color-navy-800: #001332;*/
+  /*--color-navy-900: #000c21;*/
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* 채팅 앱 전용 색상 */
+  --color-chat-primary: var(--chat-primary);
+  --color-chat-secondary: var(--chat-secondary);
+  --color-chat-accent: var(--chat-accent);
+  --color-chat-light: var(--chat-light);
+  --color-chat-dark: var(--chat-dark);
+  --color-chat-read: var(--chat-read);
+  --color-chat-online: var(--chat-online);
+  --color-chat-hover: var(--chat-hover);
+  --color-chat-darkHover: var(--chat-darkHover);
+  
+  /* 채팅 앱 전용 그림자 */
+  --shadow-chat: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-modal: 0 8px 30px rgba(0, 0, 0, 0.2);
+  
+  /* 채팅 앱 전용 최대 너비 */
+  --max-width-chat: 1200px;
+  
+  /* 채팅 앱 전용 테두리 반경 */
+  --radius-chat: 18px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.slick-dots {
+  bottom: 10px !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 0px !important;
+}
+
+.slick-dots li button:before {
+  font-size: 8px;
+  color: #cbd4cd; /* 또는 black, gray 등 눈에 띄는 색 */
+  opacity: 0.7;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ffcb05; /* 활성 dot 색 */
+  opacity: 1;
+}
+
+.slick-dots li {
+  margin: 0 !important; /* 기본 간격 제거 */
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE, Edge */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* ProseMirror 커스텀 스타일 */
+.ProseMirror {
+  @apply outline-none focus:outline-none focus:ring-0 focus:border-none;
+}
+
+/* 포커스 시 테두리 제거 (혹시 남아있을 경우 대비) */
+.ProseMirror:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.custom-editor-style {
+  /* 여기에 원하는 스타일을 추가하세요 */
+  padding: 10px 0px;
+  min-height: auto;
+}
+
+/*.custom-editor-style:focus {*/
+/*  outline: none;*/
+/*  border-color: blue;*/
+/*}*/
+
+/* iOS 폰트 크기 조정 방지 */
+html {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* 모바일 웹뷰에서 확대 방지 */
+@supports (-webkit-touch-callout: none) {
+    body {
+        /* iOS 기기에서만 적용되는 스타일 */
+        touch-action: manipulation;
+        -webkit-touch-callout: none;
+    }
+}
+
+/* 최소 폰트 크기 설정 무시 */
+@media screen and (max-width: 768px) {
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+        font-size-adjust: none;
+    }
+}
+
+/* iOS에서 탭 하이라이트 제거 */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+[data-radix-scroll-area-viewport] > div{
+  min-height: 100% !important;
+  height: 100% !important;
+}

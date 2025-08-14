@@ -1,0 +1,131 @@
+.tiptap-viewer, .tiptap-viewer * {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+    color: #adb5bd;
+    content: attr(data-placeholder);
+    float: left;
+    height: 0;
+    pointer-events: none;
+  }
+
+.tiptap pre {
+  background: #000000;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-family: 'JetBrainsMono', monospace;
+  margin: 1.5rem 0;
+  padding: 0.75rem 1rem;
+}
+
+/* 코드 블록 라인 넘버 스타일 */
+.code-block-with-line-numbers {
+  display: flex;
+  background: #1e1e1e;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-family: 'JetBrainsMono', monospace;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+  position: relative;
+  border: 1px solid #333;
+  line-height: 1.5;
+}
+
+.code-block-with-line-numbers .line-numbers {
+  display: flex;
+  flex-direction: column;
+  background-color: #252525;
+  padding: 0.75rem 0;
+  user-select: none;
+  border-right: 2px solid #444;
+  min-width: 1.5rem;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  justify-content: space-around;
+}
+
+.code-block-with-line-numbers .line-number {
+  color: #b8c4d0;
+  padding: 0 0.5rem;
+  font-size: 0.85em;
+  font-weight: 500;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.code-block-with-line-numbers .code-content {
+  margin: 0;
+  padding: 0.75rem 0.5rem;
+  flex-grow: 1;
+  background-color: transparent;
+  box-sizing: border-box;
+  white-space: pre;
+}
+
+.code-block-with-line-numbers .code-content code {
+  background-color: transparent;
+  padding: 0;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* 코드 라인 스타일 */
+.code-block-with-line-numbers .hljs-line {
+  padding: 0 0 0 0.75rem;
+  min-height: 1.5em;
+  white-space: pre;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* 빈 라인 처리 */
+.code-block-with-line-numbers .hljs-line:empty::after {
+  content: " ";
+  display: inline-block;
+  height: 1.5em;
+}
+
+/* 다크 모드 스타일 */
+.dark .code-block-with-line-numbers {
+  background-color: #0d1117;
+  border-color: #30363d;
+}
+
+.dark .code-block-with-line-numbers .line-numbers {
+  background-color: #161b22;
+  border-right-color: #30363d;
+}
+
+/* 코드 하이라이팅 */
+.code-block-with-line-numbers .hljs-comment,
+.code-block-with-line-numbers .hljs-quote {
+  color: #6a9955;
+}
+
+.code-block-with-line-numbers .hljs-keyword,
+.code-block-with-line-numbers .hljs-selector-tag,
+.code-block-with-line-numbers .hljs-literal,
+.code-block-with-line-numbers .hljs-name,
+.code-block-with-line-numbers .hljs-strong {
+  color: #569cd6;
+}
+
+.code-block-with-line-numbers .hljs-variable,
+.code-block-with-line-numbers .hljs-template-variable,
+.code-block-with-line-numbers .hljs-tag,
+.code-block-with-line-numbers .hljs-string {
+  color: #ce9178;
+}

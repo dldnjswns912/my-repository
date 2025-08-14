@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: jakdanglabs-front-dev
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4173:80"  # 필요에 따라 수정
+    volumes:
+      - .:/app       # 코드 변경 실시간 반영 (옵션)
+      - /app/node_modules  # node_modules는 컨테이너 내 유지
