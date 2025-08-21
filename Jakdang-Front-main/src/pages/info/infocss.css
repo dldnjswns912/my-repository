@@ -1,263 +1,499 @@
+/* 초기화 */
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+/* 전체 */
 .info-container {
-  width: 1200px;
-  margin: 0 auto;
-  padding: 80px 0;
   font-family: 'Spoqa Han Sans Neo', sans-serif;
-  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+/* 헤더 */
+.header-container {
+  width: 100%;
+  max-width: 1440px;
+  height: 80px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  background: #ffffff;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
-  width: 324px;
-  height: auto;
-  margin-bottom: 20px;
+  height: 36px;
+  width: auto;
 }
 
 .nav-menu {
   display: flex;
   gap: 40px;
-  margin-left: auto;
-  margin-bottom: 20px;
 }
 
 .nav-item {
   font-family: 'Noto Sans KR', sans-serif;
   font-weight: 500;
   font-size: 17px;
-  line-height: 150%;
+  line-height: 26px;
   color: #000;
-  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 6px;
+  transition: all 0.3s ease;
 }
 
-.divider-line {
+/* Hover 시 밑줄만 */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FF8A00;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
   width: 100%;
+}
+
+.header-divider {
+  position: fixed; /* <- 화면 기준으로 고정 */
+  top: 80px;        /* 헤더 높이와 정확히 맞춰줌 */
+  left: 0;
+  width: 100vw;
   height: 2px;
   background: #D9D9D9;
-  margin: 20px 0;
+  z-index: 999;     /* 헤더 아래에 위치하도록 낮춤 */
 }
 
-.info-title {
-  font-size: 44px;
-  font-weight: 700;
-  color: #FF8A00;
-  line-height: 150%;
-  margin: 40px 0;
-}
-
-.yellow-section {
+/* 제목 부분 */
+.section-hero {
+  position: relative;
   width: 100%;
-  height: 500px;
-  background: #E8D531;
-  border-radius: 30px;
-  overflow: hidden;
-  margin: 40px 0;
-}
-
-.hands-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.description-text {
-  font-size: 26px;
-  font-weight: 400;
-  color: #333;
-  line-height: 1.5;
-  margin: 40px 0;
-  white-space: pre-line;
-}
-
-.about-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  margin: 80px 0;
-}
-
-.about-image {
-  width: 520px;
-  height: 600px;
-  border-radius: 30px;
-  overflow: hidden;
-}
-
-.about-text-wrapper {
-  width: 520px;
-}
-
-.about-label {
-  display: flex;
-  align-items: center;
-  font-family: 'Noto Sans KR';
-  font-size: 18px;
-  font-weight: 700;
-  color: #3B2610;
-  margin-bottom: 20px;
-}
-
-.about-dot {
-  width: 8px;
-  height: 8px;
-  background: #FFC900;
-  border-radius: 50%;
-  margin-left: 8px;
-}
-
-.about-title {
-  font-size: 36px;
-  font-weight: 700;
-  color: #3B2610;
-  line-height: 130%;
-  margin-bottom: 30px;
-}
-
-.about-description {
-  font-size: 20px;
-  font-weight: 400;
-  color: #333;
-  line-height: 170%;
-}
-
-/* 공통 설정 */
-body {
-  margin: 0;
-  font-family: 'Spoqa Han Sans Neo', sans-serif;
-  background-color: #ffffff;
-  color: #333;
-}
-
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0;
-  padding: 0;
-}
-
-/* 전체 레이아웃 컨테이너 */
-.info-container {
-  width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 80px 0;
+  background-color: #fff;
+  padding: 80px 20px 0; /* 아래쪽 패딩 제거 */
   box-sizing: border-box;
+}
+
+.hero-title {
   font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 150%;
+  color: #3B2610;
+  white-space: pre-line;
+
+  width: 1200px;        /* ✅ 이미지와 너비 맞춤 */
+  margin: 0 auto 40px;  /* ✅ 가운데 정렬 */
+  text-align: left;     /* ✅ 내용은 왼쪽 정렬 */
+}
+
+.hero-title .highlight {
+  color: #FF8A00;
+}
+
+.hero-image-box {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 500px;
+  background-color: #E8D531;
+  border-radius: 30px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hero-background-image {
+  position: absolute;
+  top: -101px;
+  left: 0;
+  width: 1200px;
+  height: 801px;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-description {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 150%;
+  color: #333333;
+  width: 1200px;              /* ✅ 이미지와 동일하게 맞춤 */
+  margin: 40px auto 0;        /* ✅ 중앙 정렬 */
+  white-space: pre-line;
+  text-align: left;           /* ✅ 문단은 왼쪽 정렬 유지 */
+}
+
+.hero-description .highlight {
+  color: #FF8A00;
+  font-weight: 500;
 }
 
 /* 타이틀 */
 .info-title {
-  font-size: 44px;
+  font-size: 40px;
+  text-align: center;
   font-weight: 700;
-  text-align: left;
   line-height: 1.5;
-  margin-bottom: 40px;
-  color: #333;
+  margin-bottom: 60px;
 }
-
-/* 강조 색상 */
 .highlight-orange {
   color: #FF8A00;
 }
 
+/* 노란 배경 섹션 */
+.yellow-section {
+  background-color: #E8D531;
+  border-radius: 80px;
+  padding: 60px 30px;
+  margin-bottom: 80px;
+}
+.hands-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
 /* 설명 텍스트 */
-.info-description {
-  font-size: 18px;
+.description-text {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
   line-height: 1.8;
-  margin-bottom: 40px;
-}
-
-/* 이미지 */
-.info-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  margin: 30px 0;
-}
-
-/* 섹션 컨테이너들 */
-.section {
   margin-bottom: 80px;
 }
 
-/* 좌우 배치 */
-.flex-row {
+/* About 섹션 */
+.about-section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 60px;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 80px;
 }
-
-/* 오른쪽 정렬용 */
-.flex-row-reverse {
-  flex-direction: row-reverse;
-}
-
-/* 버튼 스타일 */
-.info-button {
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  background-color: #FF8A00;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.info-button:hover {
-  background-color: #e27a00;
-}
-
-/* 지도 컨테이너 */
-.map-container {
+.about-image img {
   width: 100%;
-  height: 400px;
-  margin-top: 30px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  max-width: 480px;
+}
+.about-text-wrapper {
+  flex: 1;
+  min-width: 300px;
+}
+.about-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #777;
+}
+.about-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #FF8A00;
+  border-radius: 50%;
+}
+.about-title {
+  font-size: 28px;
+  margin: 20px 0;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.about-description {
+  font-size: 17px;
+  line-height: 1.8;
 }
 
-/* contact us 영역 */
-.contact-section {
-  background-color: #f9f9f9;
-  padding: 60px 0;
+/* Point 섹션 */
+.point-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+.point-text-wrapper {
+  flex: 1;
+  min-width: 300px;
+}
+.point-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #777;
+}
+.point-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #E8D531;
+  border-radius: 50%;
+}
+.point-title {
+  font-size: 28px;
+  margin: 20px 0;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.point-description {
+  font-size: 17px;
+  line-height: 1.8;
+}
+.point-image-wrapper img {
+  max-width: 480px;
+  width: 100%;
+}
+
+/* Formula 섹션 */
+.formula-section {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.formula-title-label {
+  font-size: 16px;
+  color: #555;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.formula-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #FF8A00;
+  border-radius: 50%;
+}
+.formula-headline {
+  font-size: 36px;
+  font-weight: 800;
+  margin: 20px 0;
+}
+.headline-separator {
+  display: inline-block;
+  width: 10px;
+}
+.headline-orange {
+  color: #FF8A00;
+  margin-left: 6px;
+}
+.formula-subtext {
+  font-size: 18px;
+  margin: 10px 0 30px;
+  color: #777;
+}
+.formula-description {
+  font-size: 17px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* How We Work */
+.howwework-section {
+  margin-bottom: 80px;
   text-align: center;
 }
-
-/* 서비스 소개 영역 등 세부 스타일 */
-.service-section {
-  padding: 60px 0;
+.howwework-title {
+  font-size: 28px;
+  font-weight: 700;
+}
+.howwework-title-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #FF8A00;
+  margin: 10px auto;
+  border-radius: 50%;
+}
+.howwework-items {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.howwework-item-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.dot {
+  color: #FF8A00;
+  margin-left: 4px;
+}
+.grow-circle {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #FF8A00;
+  font-size: 18px;
 }
 
-.service-title {
-  font-size: 36px;
+/* Mobile Service 소개 */
+.mobile-section {
+  margin-bottom: 80px;
+}
+.mobile-subtext {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+.mobile-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #FF8A00;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+.mobile-inner-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.mobile-left-content {
+  flex: 1;
+}
+.mobile-title {
+  font-size: 24px;
   font-weight: 700;
   margin-bottom: 20px;
 }
-
-.service-description {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #444;
+.mobile-title .highlight {
+  color: #FF8A00;
+}
+.mobile-description p {
+  margin-bottom: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.mobile-image-wrapper img {
+  max-width: 380px;
+  width: 100%;
 }
 
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-top: 40px;
+/* Guide Section */
+.guide-container {
+  margin-bottom: 80px;
 }
-
-.card {
-  padding: 24px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  text-align: left;
-}
-
-/* footer 오버라이딩 (필요한 경우) */
-.custom-footer {
-  background-color: #333;
-  color: white;
-  padding: 40px 0;
+.info-top-text {
   text-align: center;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.guide-box {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+.guide-text {
+  flex: 1;
+}
+.guide-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+.guide-desc {
+  font-size: 17px;
+  line-height: 1.7;
+}
+.guide-box img {
+  max-width: 300px;
+}
+
+/* Contact Section */
+.contact-section {
+  background-color: #F8F8F8;
+  padding: 60px 30px;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+.contact-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.yellow-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #E8D531;
+  border-radius: 50%;
+}
+.contact-address {
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.contact-map-wrapper {
+  height: 300px;
+}
+.contact-map {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* 배너 */
+.banner-section {
+  background-color: #E8D531;
+  padding: 60px 30px;
+  text-align: center;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+.banner-title {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.banner-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* 푸터 */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  background-color: #f5f5f5;
+}
+.footer-logo {
+  width: 160px;
+}
+.footer-links {
+  display: flex;
+  gap: 20px;
   font-size: 14px;
+  margin-bottom: 10px;
+}
+.footer-copy {
+  font-size: 13px;
+  color: #777;
 }

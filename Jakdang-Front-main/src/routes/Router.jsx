@@ -558,11 +558,12 @@ export const router = createBrowserRouter([
           },
         ],
       },
-      {
-  path: "info",
-  element: <MainInfo />,
-},
     ],  },
+    // info 독립
+      {
+    path: "/info",
+    element: <MainInfo />, // Layout 바깥에서 직접 렌더링됨 → 커스텀 헤더/푸터만 적용됨
+  },
   // 팝업 라우트 (레이아웃 없음)
   {
     path: "/popup-chat",
