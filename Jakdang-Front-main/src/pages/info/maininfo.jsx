@@ -118,25 +118,81 @@ const MainInfo = () => {
     </div>
   </div>
 </div>
-      {/* HOW WE WORK */}
-      <div className="how-we-work">
-        <h2>How we work</h2>
-        <div className="work-items">
-          <div className="item">
-            <h3>Create<span className="dot"></span></h3>
-            <p>혼자보다 더 멀리, 함께 만드는 여정으로</p>
-          </div>
-          <div className="item">
-            <h3>Connect<span className="dot"></span></h3>
-            <p>관심사와 기술로 연결된 창작 커뮤니티로</p>
-          </div>
-          <div className="item">
-            <h3>Grow</h3>
-            <div className="circle">+AI</div>
-            <p>AI와 함께 발전하는 실력과 커리어로</p>
+
+<section className="work-section">
+  {/* 위 장식 라인: SVG (가로 꽉) */}
+    <div className="work-track">
+    {/* 라인: 기존 SVG */}
+    <svg
+      className="work-line"
+      viewBox="0 0 1440 108"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+    >
+      <path d="M0 1L201 1" stroke="#222" vectorEffect="non-scaling-stroke" />
+      <path d="M249 1L561 1" stroke="#222" vectorEffect="non-scaling-stroke" />
+      <path
+        d="M609 1H759C786.614 1 809 23.3858 809 51V57C809 84.6142 831.386 107 859 107H1032"
+        stroke="#222" vectorEffect="non-scaling-stroke"
+      />
+      <path d="M1080 107L1310 107" stroke="#222" vectorEffect="non-scaling-stroke" />
+      <path d="M1294 107L1440 107" stroke="#222" vectorEffect="non-scaling-stroke" />
+    </svg>
+
+    {/* 핀(동그라미) 3개 — 피그마 좌표를 비율로 변환해서 배치 */}
+    {/* 1: left 201px, top 143px  →  13.96% / 47.7% */}
+    <div className="pin" style={{ left: '13.96%', top: '47.7%' }}>
+      <span className="dot-outer"></span>
+      <span className="dot-inner"></span>
+    </div>
+
+    {/* 2: left 561px, top 143px  →  38.96% / 47.7% */}
+    <div className="pin" style={{ left: '38.96%', top: '47.7%' }}>
+      <span className="dot-outer"></span>
+      <span className="dot-inner"></span>
+    </div>
+
+    {/* 3: left 1032px, top 250px → 71.67% / 83.33%  (어두운 핀) */}
+    <div className="pin" style={{ left: '71.67%', top: '83.33%' }}>
+      <span className="dot-outer dark"></span>
+      <span className="dot-inner dark"></span>
+    </div>
+  </div>
+
+  {/* 컨텐츠 */}
+  <div className="work-wrap">
+    <div className="work-header">
+      <span>How we work</span><i className="yellow-dot" />
+    </div>
+
+    <div className="work-grid">
+      <div className="work-step">
+        <h3 className="work-title">Create<i className="title-dot" /></h3>
+        <div className="work-underline u-210" />
+        <p className="work-desc">혼자보다 더 멀리, 함께 만드는 여정으로</p>
+      </div>
+
+      <div className="work-step">
+        <h3 className="work-title">Connect<i className="title-dot" /></h3>
+        <div className="work-underline u-252" />
+        <p className="work-desc">관심사와 기술로 연결된 창작 커뮤니티로</p>
+      </div>
+
+      <div className="work-step">
+        <div className="grow-row">
+          <h3 className="work-title no-dot">Grow</h3>
+          <div className="ai-badge">
+            <span className="plus-vert" />
+            <span className="plus-horz" />
+            <span className="ai-text">AI</span>
           </div>
         </div>
+        <div className="work-underline u-169" />
+        <p className="work-desc">AI와 함께 발전하는 실력과 커리어로</p>
       </div>
+    </div>
+  </div>
+</section>
 
       {/* SERVICE */}
       <div className="service">

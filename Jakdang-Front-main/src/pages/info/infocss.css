@@ -345,44 +345,139 @@ html, body {
   text-align: center;
 }
 
+/* 섹션 베이스 */
+.work-section{
+  width:100%;
+  background:#fff;
+  position:relative;
+  overflow:hidden;
+  padding-top:48px;
+  padding-bottom:64px;
+}
 
-/* How We Work */
-.howwework-section {
-  margin-bottom: 80px;
-  text-align: center;
+/* SVG 라인: 화면 가로 꽉 */
+.work-line{
+  display:block;
+  width:100vw;      /* 풀-블리드 */
+  height:120px;     /* 기본 높이 */
+  margin:0 0 32px;
+  left:50%;
+  transform:translateX(-50%);   /* 부모 패딩에 영향 안 받게 중앙정렬 */
+  position:relative;
 }
-.howwework-title {
-  font-size: 28px;
-  font-weight: 700;
+.work-line path{
+  fill:none;
+  stroke-width:1.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
 }
-.howwework-title-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #FF8A00;
-  margin: 10px auto;
-  border-radius: 50%;
+
+/* 1200 컨테이너 */
+.work-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 24px;
+  box-sizing:border-box;
 }
-.howwework-items {
-  display: flex;
-  justify-content: center;
-  gap: 60px;
-  margin-top: 40px;
-  flex-wrap: wrap;
+
+/* 헤더 */
+.work-header{
+  display:flex; align-items:center; gap:8px;
+  font-family:'Noto Sans KR', sans-serif;
+  font-weight:700; font-size:18px; color:#3B2610;
+  margin-bottom:24px;
 }
-.howwework-item-title {
-  font-size: 20px;
-  font-weight: 600;
+.yellow-dot{ width:8px; height:8px; border-radius:50%; background:#FFC900; }
+
+/* 그리드 */
+.work-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:56px;
 }
-.dot {
-  color: #FF8A00;
-  margin-left: 4px;
+
+/* 카드(스텝) */
+.work-title{
+  font-family:'Gmarket Sans TTF', sans-serif;
+  font-weight:500; font-size:50px; line-height:1.35;
+  color:#000; margin:0;
+  display:inline-flex; align-items:center; gap:8px;
 }
-.grow-circle {
-  margin-top: 8px;
-  font-weight: bold;
-  color: #FF8A00;
-  font-size: 18px;
+.work-title .title-dot{
+  width:10px; height:10px; border-radius:50%; background:#FFC900;
 }
+.work-title.no-dot .title-dot{ display:none; }
+
+.work-underline{ height:1px; background:#D9D9D9; margin:8px 0 12px; width:100%; }
+.u-210{ max-width:210px; }
+.u-252{ max-width:252px; }
+.u-169{ max-width:169px; }
+
+.work-desc{
+  font-family:'Spoqa Han Sans Neo', sans-serif;
+  font-size:18px; line-height:150%; color:#444; margin:0;
+}
+
+/* Grow + AI 뱃지 */
+.grow-row{ display:flex; align-items:center; gap:14px; }
+.ai-badge{
+  position:relative; width:100px; height:100px; border-radius:999px; background:#000;
+  flex:0 0 auto;
+}
+.ai-text{
+  position:absolute; right:22px; top:22px;
+  font-family:'Gmarket Sans TTF', sans-serif;
+  font-weight:500; font-size:50px; line-height:1; color:#fff;
+}
+.plus-vert, .plus-horz{ position:absolute; background:#fff; }
+.plus-vert{ width:3px; height:27px; left:12px; top:36px; }
+.plus-horz{ width:27px; height:3px; left:0; top:48px; }
+
+/* ===================== 반응형 ===================== */
+
+/* 1200↓: 간격 축소, 타이틀 약간 줄임 */
+@media (max-width: 1200px){
+  .work-grid{ gap:40px; }
+  .work-title{ font-size:44px; }
+  .ai-badge{ width:92px; height:92px; }
+  .ai-text{ right:20px; top:20px; font-size:46px; }
+  .work-line{ height:110px; }
+}
+
+/* 1024↓: 2칼럼으로, 마지막은 한 줄 차지 */
+@media (max-width: 1024px){
+  .work-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:36px 28px;
+  }
+  .work-grid > .work-step:last-child{
+    grid-column:1 / -1;   /* Grow+AI 한 줄 전체 */
+  }
+  .work-line{ height:100px; }
+}
+
+/* 768↓: 1칼럼, 가운데 정렬, 폰트/뱃지 더 축소 */
+@media (max-width: 768px){
+  .work-grid{ grid-template-columns:1fr; gap:28px; text-align:center; }
+  .work-title{ justify-content:center; font-size:38px; }
+  .grow-row{ justify-content:center; }
+  .work-underline{ margin-inline:auto; }
+  .work-desc{ font-size:16px; }
+  .ai-badge{ width:84px; height:84px; }
+  .ai-text{ right:18px; top:18px; font-size:42px; }
+  .plus-vert{ height:24px; left:11px; top:32px; }
+  .plus-horz{ width:24px; top:44px; }
+  .work-line{ height:84px; margin-bottom:24px; }
+}
+
+/* 480↓: 더 작게 */
+@media (max-width: 480px){
+  .work-title{ font-size:32px; }
+  .ai-badge{ width:72px; height:72px; }
+  .ai-text{ right:15px; top:15px; font-size:36px; }
+  .work-line{ height:72px; }
+}
+
 
 /* Mobile Service 소개 */
 .mobile-section {
