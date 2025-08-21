@@ -145,164 +145,206 @@ html, body {
   color: #FF8A00;
   font-weight: 500;
 }
-
-/* 타이틀 */
-.info-title {
-  font-size: 40px;
-  text-align: center;
-  font-weight: 700;
-  line-height: 1.5;
-  margin-bottom: 60px;
-}
-.highlight-orange {
-  color: #FF8A00;
-}
-
-/* 노란 배경 섹션 */
-.yellow-section {
-  background-color: #E8D531;
-  border-radius: 80px;
-  padding: 60px 30px;
-  margin-bottom: 80px;
-}
-.hands-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 80%;
-}
-
-/* 설명 텍스트 */
-.description-text {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.8;
-  margin-bottom: 80px;
-}
-
-/* About 섹션 */
-.about-section {
+.about-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 80px;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
 }
-.about-image img {
-  width: 100%;
-  max-width: 480px;
+
+.about-image {
+  width: 520px;
+  height: 600px;
+  border-radius: 30px;
+  object-fit: cover;
 }
-.about-text-wrapper {
-  flex: 1;
-  min-width: 300px;
+
+.about-text {
+  width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
+
 .about-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #777;
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #3B2610;
+  display: inline-block;
+  position: relative;
 }
+
 .about-dot {
+  display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: #FF8A00;
+  background-color: #FFC900;
   border-radius: 50%;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
 }
+
 .about-title {
-  font-size: 28px;
-  margin: 20px 0;
-  font-weight: bold;
-  line-height: 1.5;
-}
-.about-description {
-  font-size: 17px;
-  line-height: 1.8;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  color: #3B2610;
 }
 
-/* Point 섹션 */
-.point-section {
+.about-description {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 170%;
+  color: #333333;
+}
+
+.believe-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 80px;
+  align-items: flex-end; /* 하단 기준 정렬 */
+  justify-content: center;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 0 20px;
+  padding-top: 60px; /* 위에 다른 요소와의 간격 확보 */
 }
-.point-text-wrapper {
-  flex: 1;
-  min-width: 300px;
+
+.believe-image {
+  width: 520px;
+  height: 600px;
+  border-radius: 30px;
+  object-fit: cover;
 }
-.point-label {
+
+.believe-text {
+  width: 520px;
   display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #777;
+  flex-direction: column;
+  gap: 20px;
 }
-.point-dot {
+
+.believe-label {
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #3B2610;
+  display: inline-block;
+  position: relative;
+}
+
+.believe-dot {
+  display: inline-block;
   width: 8px;
   height: 8px;
-  background-color: #E8D531;
+  background-color: #FFC900;
   border-radius: 50%;
-}
-.point-title {
-  font-size: 28px;
-  margin: 20px 0;
-  font-weight: bold;
-  line-height: 1.5;
-}
-.point-description {
-  font-size: 17px;
-  line-height: 1.8;
-}
-.point-image-wrapper img {
-  max-width: 480px;
-  width: 100%;
+  margin-left: 5px;
+  position: relative;
+  top: -2px;
 }
 
-/* Formula 섹션 */
-.formula-section {
-  text-align: center;
-  margin-bottom: 80px;
+.believe-title {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  color: #3B2610;
 }
-.formula-title-label {
-  font-size: 16px;
-  color: #555;
+
+.believe-description {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 170%;
+  color: #333333;
+}
+
+/* 슬로건 */
+.slogan-section {
+  width: 100%; /* 전체 화면 너비로 설정 */
+  background-color: #FFF9E5;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 8px;
 }
-.formula-dot {
+
+.slogan-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  box-sizing: border-box;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+   text-align: center;
+}
+
+.slogan-header {
+  display: flex;
+  align-items: center;
+   justify-content: center;
+  font-weight: 700;
+  font-size: 20px;
+  color: #3B2610;
+  margin-bottom: 24px;
+}
+
+.slogan-header .yellow-dot {
   width: 8px;
   height: 8px;
-  background-color: #FF8A00;
   border-radius: 50%;
+  background-color: #FFC900;
+  margin-left: 8px;
 }
-.formula-headline {
-  font-size: 36px;
-  font-weight: 800;
-  margin: 20px 0;
+
+.slogan-title {
+  font-family: 'Gmarket Sans TTF', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  color: #3B2610;
+  display: flex;
+   justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
-.headline-separator {
-  display: inline-block;
-  width: 10px;
-}
-.headline-orange {
+
+.slogan-title .orange {
   color: #FF8A00;
-  margin-left: 6px;
 }
-.formula-subtext {
-  font-size: 18px;
-  margin: 10px 0 30px;
-  color: #777;
+
+.slogan-title .line {
+  width: 98px;
+  height: 2px;
+  background-color: #3B2610;
+  display: inline-block;
 }
-.formula-description {
-  font-size: 17px;
-  line-height: 1.7;
-  max-width: 700px;
-  margin: 0 auto;
+
+.slogan-sub {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 24px;
 }
+
+.slogan-description {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 170%;
+  color: #333333;
+  text-align: center;
+}
+
 
 /* How We Work */
 .howwework-section {

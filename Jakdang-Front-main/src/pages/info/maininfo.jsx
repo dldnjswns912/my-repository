@@ -27,72 +27,97 @@ const MainInfo = () => {
   }, []);
 
   return (
-        <div className="info-container">
-   <header className="header-container">
-  <img src="/jakdanglabs_logo4x.png" alt="Jakdang Labs Logo" className="logo" />
-  <nav className="nav-menu">
-    <a href="#intro" className="nav-item">작당연구소 소개</a>
-    <a href="#service" className="nav-item">서비스</a>
-    <a href="#info" className="nav-item">안내</a>
-  </nav>
-  <div className="header-divider"></div>
-</header>
-      
+    <div className="info-container">
+      <header className="header-container">
+        <img src="/jakdanglabs_logo4x.png" alt="Jakdang Labs Logo" className="logo" />
+        <nav className="nav-menu">
+          <a href="#intro" className="nav-item">작당연구소 소개</a>
+          <a href="#service" className="nav-item">서비스</a>
+          <a href="#info" className="nav-item">안내</a>
+        </nav>
+        <div className="header-divider"></div>
+      </header>
+
       {/* HERO */}
-<section className="section-hero">
-  <h1 className="hero-title">
-    <span className="highlight">AI활용</span>으로 함께 만드는 창작의 흐름<br />
-    모두가 연결되는 커뮤니티, <span className="highlight">작당연구소</span>
-  </h1>
+      <section className="section-hero">
+        <h1 className="hero-title">
+          <span className="highlight">AI활용</span>으로 함께 만드는 창작의 흐름<br />
+          모두가 연결되는 커뮤니티, <span className="highlight">작당연구소</span>
+        </h1>
 
-  <div className="hero-image-box">
-    <img src="/hands.png" alt="hands" className="hero-background-image" />
-  </div>
+        <div className="hero-image-box">
+          <img src="/hands.png" alt="hands" className="hero-background-image" />
+        </div>
 
-<p className="hero-description">
-  작당연구소는<br />
-  공동의 관심사를 가진 인재들이 <span className="highlight">AI 기술을 활용</span>해 창작 역량을 확장하고,<br />
-  커뮤니티와 함께 성장하며, 커리어를 쌓아나가는 <span className="highlight">창의인재중심</span> 연구소입니다.
-</p>
-</section>
+        <p className="hero-description">
+          작당연구소는<br />
+          공동의 관심사를 가진 인재들이 <span className="highlight">AI 기술을 활용</span>해 창작 역량을 확장하고,<br />
+          커뮤니티와 함께 성장하며, 커리어를 쌓아나가는 <span className="highlight">창의인재중심</span> 연구소입니다.
+        </p>
+      </section>
 
-      {/* ABOUT */}
-      <div className="about">
-        <img src="/teaching.png" alt="교육 이미지" className="about-img" />
+      <div className="about-container">
+        <img src="/teaching.png" alt="teaching" className="about-image" />
         <div className="about-text">
-          <h2>
+          <div className="about-label">
+            About 작당연구소 <span className="about-dot"></span>
+          </div>
+          <h2 className="about-title">
             기술이 창작을 돕고,<br />
             사람이 사람을 이끌어주는 곳
           </h2>
-          <p>
-            작당연구소는 AI와 사람의 협업을 통해 창작의 새로운 패러다임을 제시하는 허브 플랫폼입니다. 생성형 AI 도구를 활용한 콘텐츠 제작부터
-            커뮤니티 기반의 협업 프로젝트, 온·오프라인 교육과 창작 멘토링, 프로젝트 중심의 커리어 성장, 그리고 작업물의 유통 및 수익화까지,
-            창작의 전 과정을 아우르는 지원을 제공합니다.
+          <p className="about-description">
+            작당연구소는 AI와 사람의 협업을 통해 창작의 새로운 패러다임을 제시하는 허브 플랫폼입니다.
+            생성형 AI 도구를 활용한 콘텐츠 제작부터 커뮤니티 기반의 협업 프로젝트,
+            온·오프라인 교육과 창작 멘토링, 프로젝트 중심의 커리어 성장,
+            그리고 작업물의 유통 및 수익화까지, 창작의 전 과정을 아우르는 지원을 제공합니다.
+            기술이 창작을 돕고, 사람이 사람을 이끌며 함께 나아가는 이 흐름이
+            바로 작당연구소의 핵심입니다.
           </p>
         </div>
       </div>
 
-      {/* MISSION */}
-      <div className="mission">
-        <h2>
-          AI와 커뮤니티, 창작을 확장하는 힘
-        </h2>
-        <p>
-          우리는 믿습니다. 창작은 더 이상 혼자가 아닌, 함께하는 시대라는 것을. 그리고 기술은 사람을 대체하는 것이 아니라,<br />
-          사람을 확장시키는 도구라는 것을 말입니다.
-        </p>
-        <img src="/point.png" alt="전략 이미지" className="mission-img" />
+      <div className="believe-container">
+        <div className="believe-text">
+          <span className="believe-label">
+            We believe
+            <span className="believe-dot"></span>
+          </span>
+          <h2 className="believe-title">
+            AI와 커뮤니티,<br />
+            창작을 확장하는 힘
+          </h2>
+          <p className="believe-description">
+            우리는 믿습니다. 창작은 더 이상 혼자가 아닌, 함께하는 시대라는 것을. 그리고 기술은 사람을 대체하는 것이 아니라, 사람을 확장시키는 도구라는 것을 말입니다. 우리는 AI를 창작자에게 유용한 도구로 제공하고, 커뮤니티를 통해 아이디어를 나누며 창작의 가치와 가능성을 더욱 넓혀갑니다. 사람과 사람이 연결될 때 아이디어는 더 풍부해지고, AI와의 협업은 그 가능성을 현실로 만듭니다. 함께 나누는 배움과 실험, 연결되는 대화와 시도, 그리고 거기서 탄생하는 창작의 흐름이야말로 작당연구소가 지향하는 미래입니다.
+          </p>
+        </div>
+        <img src="/point.png" alt="point" className="believe-image" />
       </div>
 
-      {/* FORMULA */}
-      <div className="formula">
-        <h3>작당연구소의 새로운 공식</h3>
-        <h2>
-          Don’t just imagine. <span>Create</span> <span className="orange">together!</span>
-        </h2>
-        <p>기술이 뒷받침하고, 커뮤니티가 함께 실현하며, 그 안에서 인재들의 재능이 성장합니다.</p>
-      </div>
+<div class="slogan-section">
+  <div class="slogan-container">
+    <div class="slogan-header">
+      <span>작당연구소의 새로운 공식</span>
+      <div class="yellow-dot"></div>
+    </div>
 
+    <div class="slogan-title">
+      Don’t just <span class="orange">imagine.</span> Create
+      <span class="line"></span>
+      <span class="orange">together!</span>
+    </div>
+
+    <div class="slogan-sub">
+      <span>AI와 함께</span>
+      <span>커뮤니티와 함께</span>
+    </div>
+
+    <div class="slogan-description">
+      기술이 뒷받침하고, 커뮤니티가 함께 실현하며, 그 안에서 인재들의 재능이 성장합니다.<br />
+      작당연구소는 창의 인재들이 기술과 커뮤니티를 통해 더 큰 가능성을 펼치는 곳입니다.
+    </div>
+  </div>
+</div>
       {/* HOW WE WORK */}
       <div className="how-we-work">
         <h2>How we work</h2>
