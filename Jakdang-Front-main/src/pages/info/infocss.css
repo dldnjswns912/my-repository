@@ -478,6 +478,61 @@ html, body {
   .work-line{ height:72px; }
 }
 
+/* === Service Header (Group 45/46) === */
+.svc-head {
+  position: relative;
+  width: 446px;         /* 피그마: Group width */
+  height: 27px;         /* 피그마: Group height */
+  margin: 80px auto 0;  /* top: 80px, 가로 중앙 정렬 (calc 대체) */
+  box-sizing: border-box;
+}
+
+/* 텍스트 (피그마 타이포 그대로) */
+.svc-head__text {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;      /* 피그마 */
+  line-height: 150%;    /* 27px */
+  color: #3B2610;       /* 피그마 컬러 */
+  text-align: center;   /* Group 중앙 정렬 */
+  white-space: nowrap;  /* 한 줄 유지 (피그마 박스 높이 동일) */
+}
+
+/* Ellipse 11 (노란 점) */
+.svc-head__dot {
+  position: absolute;
+  right: -16px;         /* 그룹 오른쪽 바깥 여백으로 살짝 */
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: #FFC900;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  display: inline-block;
+}
+
+/* 반응형: 좁은 화면에서 폭/폰트 줄이기(선택) */
+@media (max-width: 480px) {
+  .svc-head {
+    width: 90%;
+    height: auto;            /* 텍스트 줄바꿈 허용시 auto */
+  }
+  .svc-head__text {
+    font-size: 16px;
+    white-space: normal;     /* 필요하면 줄바꿈 허용 */
+    text-wrap: balance;      /* 지원 브라우저에서 균형 잡힌 줄바꿈 */
+  }
+  .svc-head__dot {
+    right: -12px;
+    width: 6px;
+    height: 6px;
+  }
+}
+
+.svc-icon { width: 68px; height: 68px; }
+.svc-icon svg { width: 100%; height: 100%; display: block; }
 
 /* Mobile Service 소개 */
 .mobile-section {
