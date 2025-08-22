@@ -235,7 +235,7 @@ const MainInfo = () => {
 
 
       {/* 작당랩스는 교육 ~ */}
-      <section className="svc-strap">
+      <section className="svc-strap" id="info">
         <p className="svc-strap__text">
           <span className="accent">작당랩스는</span>{' '}
           교육, 커뮤니티, AI를 연결하는 <span className="nowrap">혁신적인 플랫폼으로</span><br className="br-desktop" />
@@ -360,29 +360,6 @@ const MainInfo = () => {
             팀프로젝트를 진행하면서 명확하고 체계적으로 진행상황을 공유할 수 있도록 했습니다.
           </p>
         </div>
-      </section>
-
-      <section className="contact" id="info" aria-labelledby="contact-title">
-        <div className="contact__head">
-          <div className="contact__left">
-            <h3 id="contact-title" className="contact__title">Contact us</h3>
-            <span className="contact__dot" aria-hidden></span>
-          </div>
-
-          <div className="contact__addr">
-            <div className="addr-kr">서울특별시 마포구 백범로23, 3층</div>
-            <div className="addr-en">23, Baekbeom-ro, Mapo-gu, Seoul, Republic of Korea</div>
-          </div>
-        </div>
-
-        <figure className="contact__map">
-          <img
-            src="/map.png"
-            alt="회사 위치 지도(임시 이미지)"
-            loading="lazy"
-            decoding="async"
-          />
-        </figure>
       </section>
 
       <section className="cta-band" aria-labelledby="cta-title">
