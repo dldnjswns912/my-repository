@@ -1200,182 +1200,225 @@ body {
   .manage-copy{ max-width: none; }
 }
 
-/* Mobile Service 소개 */
-.mobile-section {
-  margin-bottom: 80px;
+/* 컨테이너 (Figma: left 120px 기준 → 중앙정렬로 변환) */
+.contact{
+  width: 1200px;
+  margin: 160px auto 0;                 /* 상단 여백: Figma top 80 */
 }
 
-.mobile-subtext {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 16px;
-}
-
-.mobile-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #FF8A00;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-}
-
-.mobile-inner-container {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.mobile-left-content {
-  flex: 1;
-}
-
-.mobile-title {
-  font-size: 24px;
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-
-.mobile-title .highlight {
-  color: #FF8A00;
-}
-
-.mobile-description p {
-  margin-bottom: 12px;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-.mobile-image-wrapper img {
-  max-width: 380px;
-  width: 100%;
-}
-
-/* Guide Section */
-.guide-container {
-  margin-bottom: 80px;
-}
-
-.info-top-text {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 40px;
-}
-
-.guide-box {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  margin-bottom: 60px;
-}
-
-.guide-text {
-  flex: 1;
-}
-
-.guide-title {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 12px;
-}
-
-.guide-desc {
-  font-size: 17px;
-  line-height: 1.7;
-}
-
-.guide-box img {
-  max-width: 300px;
-}
-
-/* Contact Section */
-.contact-section {
-  background-color: #F8F8F8;
-  padding: 60px 30px;
-  border-radius: 20px;
-  margin-bottom: 60px;
-}
-
-.contact-label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.yellow-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #E8D531;
-  border-radius: 50%;
-}
-
-.contact-address {
-  font-size: 17px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.contact-map-wrapper {
-  height: 300px;
-}
-
-.contact-map {
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-/* 배너 */
-.banner-section {
-  background-color: #E8D531;
-  padding: 60px 30px;
-  text-align: center;
-  border-radius: 20px;
-  margin-bottom: 60px;
-}
-
-.banner-title {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.banner-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 30px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-/* 푸터 */
-.footer {
+/* 헤더: 좌측 타이틀 + 점, 우측 주소 */
+.contact__head{
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  padding: 40px 20px;
-  background-color: #f5f5f5;
+  align-items: center;
+  margin-bottom: 20px;                 /* 헤더와 지도 사이 여백 */
 }
 
-.footer-logo {
-  width: 160px;
+/* 왼쪽 타이틀 그룹 (Group 43) */
+.contact__left{ display: flex; align-items: center; gap: 12px; }
+.contact__title{
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;                   /* 27px */
+  color: #3B2610;
+}
+.contact__dot{
+  width: 8px; height: 8px;
+  background: #FFC900;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-.footer-links {
+/* 오른쪽 주소 (Group 42) */
+.contact__addr{
+  width: 438px;                        /* Figma width */
+  text-align: right;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  color: #444;
+  line-height: 150%;
+  font-size: 17px;
+}
+.contact__addr .addr-kr{ /* 첫 줄(kr)만 폭 지정: 247px */
+  width: 247px;
+  margin-left: auto;                   /* 오른쪽 정렬 유지 */
+  font-weight: 400;
+}
+
+/* 지도 이미지 (image 696) */
+.contact__map{
+  margin: 0;
+  width: 1200px;
+  height: 600px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f5f5f5;                 /* 이미지 로딩 전 배경 */
+}
+.contact__map img{
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;                    /* Figma background fit 유사 */
+}
+
+/* 반응형(선택) */
+@media (max-width: 900px){
+  .contact{ width: auto; margin: 48px 24px 0; }
+  .contact__head{ flex-direction: column; align-items: flex-start; gap: 8px; }
+  .contact__addr{ width: 100%; text-align: left; font-size: 16px; }
+  .contact__addr .addr-kr{ width: auto; }
+  .contact__map{ width: 100%; height: auto; }
+  .contact__map img{ height: auto; }
+}
+
+/* ===== 풀-블리드 띠(양옆 100%) ===== */
+.cta-band{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-top: 65px;
+  margin-left: -50vw;     /* 부모가 1200px 컨테이너여도 화면 전체로 펼침 */
+  margin-right: -50vw;
+  width: 100vw;
+
+  background: linear-gradient(90deg, #FFF9E5 0%, #FFE6CD 100%);
+}
+
+/* 내부 컨테이너 (Figma padding/높이 반영) */
+.cta-band__inner{
+  max-width: 1200px;      /* 페이지 그리드 */
+  margin: 0 auto;
+  min-height: 174px;
+  padding: 40px 0;
+
   display: flex;
-  gap: 20px;
-  font-size: 14px;
-  margin-bottom: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-.footer-copy {
-  font-size: 13px;
-  color: #777;
+/* 기본 문구 색은 진갈색, 강조만 주황 */
+.cta-band__title{
+  margin: 0;
+  max-width: 1047px;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 150%;
+  color: #3B2610;            /* ← 기본 */
 }
+.cta-band__title .accent{ color: #FF8A00; }  /* ← 강조만 주황 유지 */
+
+/* 버튼 (Figma: 153x48, 12px radius) */
+.cta-band__btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 153px;
+  height: 48px;
+  padding: 12px;
+  gap: 10px;
+
+  background: #FFFFFF;
+  border-radius: 12px;
+  text-decoration: none;
+
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 150%;
+  color: #131416;
+  white-space: nowrap;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06);
+}
+
+/* 반응형(옵션) */
+@media (max-width: 900px){
+  .cta-band__inner{ padding: 24px; min-height: auto; flex-direction: column; align-items: flex-start; }
+  .cta-band__title{ font-size: 22px; }
+}
+
+/* ===== Footer: 화면 가로로만 가득(풀-블리드) ===== */
+.site-footer{
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+
+  background:#fff;
+  margin-top: 0;
+  border-top: 0;
+}
+
+/* 내부 컨텐츠는 1200 그리드에 맞춤 */
+.footer-inner{
+  max-width: 1200px;          /* ← width 대신 max-width로 */
+  margin: 0 auto;
+  padding: 60px 0;            /* 좌우 0: 다른 섹션들과 라인 정확히 맞춤 */
+  display: flex;
+  align-items: center;
+  gap: 24px;                  /* 로고-링크 간격 */
+}
+
+/* 로고 이미지: CSS가 최종 크기를 결정 */
+.footer-logo img{
+  /* JSX width/height는 내재 크기용. 실제 렌더 크기는 아래 CSS가 결정 */
+  height: 40px;               /* Figma 36px이면 36으로, 작아 보이면 40 추천 */
+  width: auto;                /* 가로는 비율 유지 */
+  max-width: none;            /* 전역 img{max-width:100%} 무효화 */
+  display: block;
+}
+
+/* 오른쪽 영역 */
+.footer-right{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:8px;
+}
+
+/* 링크 줄 */
+.footer-links{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  list-style:none;
+  padding:0; margin:0;
+}
+.footer-links a{
+  font-family:'Noto Sans KR',sans-serif;
+  font-weight:500;
+  font-size:17px;
+  line-height:150%;
+  color:#131416;
+  text-decoration:none;
+}
+.footer-links a:hover{ text-decoration:underline; }
+
+/* 카피라이트 */
+.copyright{
+  font-family:'Spoqa Han Sans Neo',sans-serif;
+  font-weight:400;
+  font-size:14px;
+  line-height:150%;
+  letter-spacing:-0.5px;
+  color:#6D7882;
+}
+
+/* 반응형 */
+@media (max-width: 900px){
+  .footer-inner{
+    max-width: none;
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .footer-logo img{ height: 32px; } /* 모바일에서 살짝 축소 */
+  .footer-links{ flex-wrap: wrap; gap: 16px 24px; }
+}
+

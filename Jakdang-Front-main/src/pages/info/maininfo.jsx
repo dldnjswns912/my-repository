@@ -267,7 +267,7 @@ const MainInfo = () => {
         </div>
       </section>
 
-       
+
       {/* 작당랩스는 교육 ~ */}
       <section className="svc-strap">
         <p className="svc-strap__text">
@@ -278,177 +278,197 @@ const MainInfo = () => {
       </section>
 
 
-<section className="svc-split svc-split--chan" aria-labelledby="chan-title">
-  {/* 좌측 카드 */}
-  <div className="svc-split__media">
-    {/* 빨간 원 2개 (배경 장식) */}
-    <span aria-hidden className="blob blob-lg"></span>
-    <span aria-hidden className="blob blob-sm"></span>
+      <section className="svc-split svc-split--chan" aria-labelledby="chan-title">
+        {/* 좌측 카드 */}
+        <div className="svc-split__media">
+          {/* 빨간 원 2개 (배경 장식) */}
+          <span aria-hidden className="blob blob-lg"></span>
+          <span aria-hidden className="blob blob-sm"></span>
 
-    {/* 폰 화면 */}
-    <img
-      src="/main_open.png"              /* image 677 */
-      alt="메인 오픈 화면"
-      className="split-phone"
-      width="374"
-      height="450"
-      loading="lazy"
-      decoding="async"
-    />
+          {/* 폰 화면 */}
+          <img
+            src="/main_open.png"              /* image 677 */
+            alt="메인 오픈 화면"
+            className="split-phone"
+            width="374"
+            height="450"
+            loading="lazy"
+            decoding="async"
+          />
 
-    {/* 툴바 */}
-    <img
-      src="/tools.png"                  /* image 678 */
-      alt="채널 도구 바"
-      className="split-tools"
-      width="611"
-      height="55"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
+          {/* 툴바 */}
+          <img
+            src="/tools.png"                  /* image 678 */
+            alt="채널 도구 바"
+            className="split-tools"
+            width="611"
+            height="55"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
 
-  {/* 우측 텍스트 */}
-  <div className="svc-split__copy">
-    <h3 id="chan-title" className="svc-split__title">활발한 소통이 이뤄지는 채널식 커뮤니티</h3>
-    <p className="svc-split__desc lead">
-      학생들이 자유롭게 질문하고 소통하며, 서로의 경험을 공유하고 성장할 수 있는 유연한 커뮤니티 공간을 만듭니다.
-    </p>
-    <p className="svc-split__desc">
-      교육기관도 이 공간에서 학생들과 실시간으로 연결됩니다.
-    </p>
-  </div>
-</section>
+        {/* 우측 텍스트 */}
+        <div className="svc-split__copy">
+          <h3 id="chan-title" className="svc-split__title">활발한 소통이 이뤄지는 채널식 커뮤니티</h3>
+          <p className="svc-split__desc lead">
+            학생들이 자유롭게 질문하고 소통하며, 서로의 경험을 공유하고 성장할 수 있는 유연한 커뮤니티 공간을 만듭니다.
+          </p>
+          <p className="svc-split__desc">
+            교육기관도 이 공간에서 학생들과 실시간으로 연결됩니다.
+          </p>
+        </div>
+      </section>
 
-{/* 고양이 부분 */}
-<section className="svc-allin" aria-labelledby="allin-title">
-  {/* 좌측 텍스트 */}
-  <div className="allin-copy">
-    <h3 id="allin-title" className="allin-title">더 쉽고 간편한 올인원 서비스</h3>
-    <p className="allin-desc">
-      기존 복잡한 교육 관리 시스템을 탈피해 직관적이고 간단한 인터페이스를 제공합니다.
-      학생도, 관리자도 모두 쉽게 사용할 수 있어 학습과 소통에만 집중할 수 있습니다.
-    </p>
-  </div>
-
-  {/* 우측 카드 */}
-  <div className="allin-media allin-card">
-    {/* 빨간 원 2개 */}
-    <span aria-hidden className="blob blob-lg"></span>
-    <span aria-hidden className="blob blob-sm"></span>
-
-    {/* image 680 */}
-    <img
-      src="/tools_chating.png"
-      alt="툴 메뉴"
-      className="allin-menu"
-      width="239"
-      height="348"
-      loading="lazy"
-      decoding="async"
-    />
-    {/* image 686 */}
-    <img
-      src="/cat_chating.png"
-      alt="채팅 화면"
-      className="allin-phone"
-      width="252"
-      height="410"
-      loading="lazy"
-      decoding="async"
-    />
-  </div>
-</section>
-
-<section className="svc-manage" aria-labelledby="manage-title">
-  {/* 왼쪽 카드 */}
-  <div className="manage-card">
-    {/* Ellipse 장식(맨 위) */}
-    <span aria-hidden className="blob blob-lg"></span>
-    <span aria-hidden className="blob blob-sm"></span>
-
-    {/* image 684 */}
-    <img
-      src="/service_teamflow.png"
-      alt="팀플로우 서비스 화면"
-      className="manage-phone"
-      width="302" height="451"
-      loading="lazy" decoding="async"
-    />
-
-    {/* image 685 */}
-    <img
-      src="/project_setting.png"
-      alt="프로젝트 설정 보드"
-      className="manage-board"
-      width="1024" height="254"
-      loading="lazy" decoding="async"
-    />
-  </div>
-
-  {/* 오른쪽 텍스트 */}
-  <div className="manage-copy">
-    <h3 id="manage-title" className="manage-title">프로젝트 관리도 한번에 관리</h3>
-    <p className="manage-desc">
-      프로젝트 관리도 효율적으로 할 수 있도록 팀플로우 서비스를 함께 제공합니다.
-      팀프로젝트를 진행하면서 명확하고 체계적으로 진행상황을 공유할 수 있도록 했습니다.
-    </p>
-  </div>
-</section>
-
-
-      {/* GUIDE (3 box) */}
-      <div className="guide">
-        <div className="guide-box">
-          <img src="/main_open.png" alt="메인화면" />
-          <img src="/tools.png" alt="도구" />
-          <h3>활발한 소통이 이루어지는 채널식 커뮤니티</h3>
-          <p>
-            학생들이 자유롭게 질문하고 소통하며, 서로의 경험을 공유하고 성장할 수 있는 공간입니다.
-            교육기관도 실시간으로 연결됩니다.
+      {/* 고양이 부분 */}
+      <section className="svc-allin" aria-labelledby="allin-title">
+        {/* 좌측 텍스트 */}
+        <div className="allin-copy">
+          <h3 id="allin-title" className="allin-title">더 쉽고 간편한 올인원 서비스</h3>
+          <p className="allin-desc">
+            기존 복잡한 교육 관리 시스템을 탈피해 직관적이고 간단한 인터페이스를 제공합니다.
+            학생도, 관리자도 모두 쉽게 사용할 수 있어 학습과 소통에만 집중할 수 있습니다.
           </p>
         </div>
 
-        <div className="guide-box">
-          <img src="/tools_chating.png" alt="툴채팅" />
-          <img src="/cat_chating.png" alt="고양이채팅" />
-          <h3>더 쉽고 간편한 올인원 서비스</h3>
-          <p>
-            복잡한 교육 시스템에서 벗어나, 누구나 직관적으로 쓸 수 있는 인터페이스를 제공합니다.
+        {/* 우측 카드 */}
+        <div className="allin-media allin-card">
+          {/* 빨간 원 2개 */}
+          <span aria-hidden className="blob blob-lg"></span>
+          <span aria-hidden className="blob blob-sm"></span>
+
+          {/* image 680 */}
+          <img
+            src="/tools_chating.png"
+            alt="툴 메뉴"
+            className="allin-menu"
+            width="239"
+            height="348"
+            loading="lazy"
+            decoding="async"
+          />
+          {/* image 686 */}
+          <img
+            src="/cat_chating.png"
+            alt="채팅 화면"
+            className="allin-phone"
+            width="252"
+            height="410"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </section>
+
+      <section className="svc-manage" aria-labelledby="manage-title">
+        {/* 왼쪽 카드 */}
+        <div className="manage-card">
+          {/* Ellipse 장식(맨 위) */}
+          <span aria-hidden className="blob blob-lg"></span>
+          <span aria-hidden className="blob blob-sm"></span>
+
+          {/* image 684 */}
+          <img
+            src="/service_teamflow.png"
+            alt="팀플로우 서비스 화면"
+            className="manage-phone"
+            width="302" height="451"
+            loading="lazy" decoding="async"
+          />
+
+          {/* image 685 */}
+          <img
+            src="/project_setting.png"
+            alt="프로젝트 설정 보드"
+            className="manage-board"
+            width="1024" height="254"
+            loading="lazy" decoding="async"
+          />
+        </div>
+
+        {/* 오른쪽 텍스트 */}
+        <div className="manage-copy">
+          <h3 id="manage-title" className="manage-title">프로젝트 관리도 한번에 관리</h3>
+          <p className="manage-desc">
+            프로젝트 관리도 효율적으로 할 수 있도록 팀플로우 서비스를 함께 제공합니다.
+            팀프로젝트를 진행하면서 명확하고 체계적으로 진행상황을 공유할 수 있도록 했습니다.
           </p>
         </div>
+      </section>
 
-        <div className="guide-box">
-          <img src="/service_teamflow.png" alt="팀플로우" />
-          <img src="/project_setting.png" alt="설정" />
-          <h3>프로젝트 관리도 한번에</h3>
-          <p>
-            팀프로젝트를 체계적으로 관리하고 공유할 수 있는 팀플로우 서비스를 함께 제공합니다.
-          </p>
-        </div>
-      </div>
+      <section className="contact" aria-labelledby="contact-title">
+        <div className="contact__head">
+          <div className="contact__left">
+            <h3 id="contact-title" className="contact__title">Contact us</h3>
+            <span className="contact__dot" aria-hidden></span>
+          </div>
 
-      {/* CONTACT */}
-      <div className="contact">
-        <h2>Contact us</h2>
-        <p>서울특별시 마포구 백범로23, 3층</p>
-        <p>23, Baekbeom-ro, Mapo-gu, Seoul, Republic of Korea</p>
-        <div id="kakao-map" className="map"></div>
-      </div>
+          <div className="contact__addr">
+            <div className="addr-kr">서울특별시 마포구 백범로23, 3층</div>
+            <div className="addr-en">23, Baekbeom-ro, Mapo-gu, Seoul, Republic of Korea</div>
+          </div>
+        </div>
 
-      {/* FOOTER */}
-      <div className="footer">
-        <div className="footer-left">
-          <img src="/jakdanglabs_logo4x.png" alt="logo" />
+        <figure className="contact__map">
+          <img
+            src="/map.png"
+            alt="회사 위치 지도(임시 이미지)"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </section>
+
+      <section className="cta-band" aria-labelledby="cta-title">
+        <div className="cta-band__inner">
+          <h3 id="cta-title" className="cta-band__title">
+            <span className="accent">AI활용</span>으로 함께 만드는 창작의 흐름<br />
+            모두가 연결되는 커뮤니티, <span className="accent">작당연구소</span>
+          </h3>
+
+          {/* 메인으로 이동 (현재 localhost:4173/info → / 로 이동) */}
+          <a
+            href="/"
+            className="cta-band__btn"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.assign(`${location.origin}/`);
+            }}
+          >
+            작당랩스 바로가기
+          </a>
         </div>
-        <div className="footer-right">
-          <span>공지사항</span>
-          <span>개인정보처리방침</span>
-          <span>이용약관</span>
-          <span>고객센터</span>
-          <p>© 2025 작당연구소. 모든 권리 보유.</p>
-        </div>
-      </div>
+      </section>
+
+      <footer className="site-footer" role="contentinfo">
+  <div className="footer-inner">
+    {/* Left: Logo */}
+    <a href="/" className="footer-logo" aria-label="JAKDANGLABS 홈으로">
+      <img
+        src="/jakdanglabs_logo4x.png"
+        alt="JAKDANG LABS"
+        width="324"
+        height="36"
+        decoding="async"
+        loading="lazy"
+      />
+    </a>
+
+    {/* Right: Links + Copyright */}
+    <div className="footer-right">
+      <nav aria-label="푸터">
+        <ul className="footer-links">
+          <li><a href="#">공지사항</a></li>
+          <li><a href="#">개인정보처리방침</a></li>
+          <li><a href="#">이용약관</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+      </nav>
+      <small className="copyright">© 2025 작당연구소. 모든 권리 보유.</small>
+    </div>
+  </div>
+</footer>
+
     </div>
   );
 };
