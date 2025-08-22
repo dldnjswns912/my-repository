@@ -83,16 +83,6 @@ body {
   /* 헤더 아래에 위치하도록 낮춤 */
 }
 
-#intro, #service, #info {
-  scroll-margin-top: 96px;   /* 헤더 높이만큼 보정. 80~120px 사이에서 조절 가능 */
-}
-
-@media (max-width: 900px){
-  #intro, #service, #info { scroll-margin-top: 72px; }
-}
-
-
-
 /* 제목 부분 */
 .section-hero {
   position: relative;
@@ -370,287 +360,146 @@ body {
   text-align: center;
 }
 
-/* 섹션 베이스 */
-.work-section {
-  width: 100%;
-  background: #fff;
-  position: relative;
-  overflow: hidden;
-  padding-top: 48px;
-  padding-bottom: 64px;
-}
+/* ===================== Work Section (PNG 라인 버전) ===================== */
 
-/* SVG 라인: 화면 가로 꽉 */
-.work-line {
-  display: block;
-  width: 100vw;
-  /* 풀-블리드 */
-  height: 120px;
-  /* 기본 높이 */
-  margin: 0 0 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  /* 부모 패딩에 영향 안 받게 중앙정렬 */
-  position: relative;
-}
+/* ===================== Work Section (boxed) ===================== */
 
-.work-line path {
-  fill: none;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+/* ===================== Work Section (boxed & pretty spacing) ===================== */
+
+.work-section{
+  width:100%;
+  background:#fff;
+  position:relative;
+  overflow:visible;
+  padding-top:24px;
+  padding-bottom:64px;
 }
 
 /* 1200 컨테이너 */
-.work-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  box-sizing: border-box;
+.work-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 24px;
+  box-sizing:border-box;
 }
 
-/* 헤더 */
-.work-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  color: #3B2610;
-  margin-bottom: 24px;
+/* 제목: 라인 위에 살짝 붙음 */
+.work-header{
+  display:flex; align-items:center; gap:8px;
+  font-family:'Noto Sans KR',sans-serif;
+  font-weight:700; font-size:18px; color:#3B2610;
+  margin:0 0 10px;
+}
+.yellow-dot{ width:8px; height:8px; border-radius:50%; background:#FFC900; }
+
+/* 라인: 컨테이너 폭 100%, 비율 유지 */
+.work-band{
+  width:100%;
+  aspect-ratio: 1440 / 155;            /* 피그마 라인 비율 */
+  background: url('/work_line.png') center/100% 100% no-repeat;
+  margin:0 0 12px;                     /* 라인과 카드 사이 간격(작게) */
+  pointer-events:none;
 }
 
-.yellow-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #FFC900;
+/* ---------- 카드 배치 파라미터 (여기 숫자만 만지면 즉시 튜닝) ---------- */
+.work-cards{
+  --card-top: 64px;                    /* 핀에서 카드까지 세로거리 */
+  --card-w:   420px;                   /* 카드 폭(타이틀+설명 적당한 폭) */
+  --title-size: 58px;                  /* Create/Connect/Grow 타이틀 크기 */
+  --desc-w:   520px;                   /* 설명문 폭 */
+  --p1: 18.2%;                         /* 1번 핀(좌) x좌표 % */
+  --p2: 45.8%;                         /* 2번 핀(중앙) x좌표 % */
+  --p3: 79.0%;                         /* 3번 핀(우) x좌표 % */
+
+  position:relative;
+  height: 280px;                       /* 카드 영역 높이(필요시 조절) */
 }
 
-/* 그리드 */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 56px;
+/* 카드 공통 */
+.work-step{
+  position:absolute;
+  top: var(--card-top);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(var(--card-w), 92vw);
+  text-align:left;
 }
 
-/* 카드(스텝) */
-.work-title {
-  font-family: 'Gmarket Sans TTF', sans-serif;
-  font-weight: 500;
-  font-size: 50px;
-  line-height: 1.35;
-  color: #000;
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
+/* 각 카드: 핀 아래 정렬(퍼센트로 움직임) */
+.work-step.step1{ left: var(--p1); }
+.work-step.step2{ left: var(--p2); }
+.work-step.step3{ left: var(--p3); }
 
-.work-title .title-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #FFC900;
+/* 타이틀/도트/언더라인/설명 */
+.work-title{
+  font-family:'Gmarket Sans TTF',sans-serif;
+  font-weight:500; 
+  font-size: var(--title-size);
+  line-height:1.25; 
+  color:#000;
+  margin:0;
+  display:inline-flex; 
+  align-items:center; gap:8px;
 }
-
-.work-title.no-dot .title-dot {
-  display: none;
+.work-title .title-dot{
+  width:10px; height:10px; border-radius:50%; background:#FFC900;
 }
+.work-title.no-dot .title-dot{ display:none; }
 
-.work-underline {
-  height: 1px;
-  background: #D9D9D9;
-  margin: 8px 0 12px;
-  width: 100%;
-}
+/* 언더라인은 살짝 긴 느낌으로 */
+.work-underline{ height:1px; background:#D9D9D9; margin:10px 0 14px; width:100%; }
+.u-210{ max-width:240px; }   /* 기존보다 약간 길게 */
+.u-252{ max-width:280px; }
+.u-169{ max-width:210px; }
 
-.u-210 {
-  max-width: 210px;
-}
-
-.u-252 {
-  max-width: 252px;
-}
-
-.u-169 {
-  max-width: 169px;
-}
-
-.work-desc {
-  font-family: 'Spoqa Han Sans Neo', sans-serif;
-  font-size: 18px;
-  line-height: 150%;
-  color: #444;
-  margin: 0;
+.work-desc{
+  max-width: var(--desc-w);
+  font-family:'Spoqa Han Sans Neo',sans-serif;
+  font-size:18px; line-height:150%; color:#444; margin:0;
 }
 
 /* Grow + AI 뱃지 */
-.grow-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.ai-badge {
-  position: relative;
-  width: 100px;
-  height: 100px;
-  border-radius: 999px;
-  background: #000;
-  flex: 0 0 auto;
-}
-
-.ai-text {
-  position: absolute;
-  right: 22px;
-  top: 22px;
-  font-family: 'Gmarket Sans TTF', sans-serif;
-  font-weight: 500;
-  font-size: 50px;
-  line-height: 1;
-  color: #fff;
-}
-
-.plus-vert,
-.plus-horz {
-  position: absolute;
-  background: #fff;
-}
-
-.plus-vert {
-  width: 3px;
-  height: 27px;
-  left: 12px;
-  top: 36px;
-}
-
-.plus-horz {
-  width: 27px;
-  height: 3px;
-  left: 0;
-  top: 48px;
-}
+.grow-row{ display:flex; align-items:center; gap:16px; }
+.ai-badge{ position:relative; width:98px; height:98px; border-radius:999px; background:#000; flex:0 0 auto; }
+.ai-text{ position:absolute; right:22px; top:22px; font-family:'Gmarket Sans TTF',sans-serif; font-weight:500; font-size:48px; line-height:1; color:#fff; }
+.plus-vert,.plus-horz{ position:absolute; background:#fff; }
+.plus-vert{ width:3px; height:26px; left:12px; top:35px; }
+.plus-horz{ width:26px; height:3px; left:0; top:47px; }
 
 /* ===================== 반응형 ===================== */
-
-/* 1200↓: 간격 축소, 타이틀 약간 줄임 */
-@media (max-width: 1200px) {
-  .work-grid {
-    gap: 40px;
-  }
-
-  .work-title {
-    font-size: 44px;
-  }
-
-  .ai-badge {
-    width: 92px;
-    height: 92px;
-  }
-
-  .ai-text {
-    right: 20px;
-    top: 20px;
-    font-size: 46px;
-  }
-
-  .work-line {
-    height: 110px;
-  }
+/* 1100↓ : 살짝 줄이기 */
+@media (max-width:1100px){
+  .work-cards{ --card-w: 380px; --title-size:52px; --desc-w:480px; --card-top:58px; }
 }
 
-/* 1024↓: 2칼럼으로, 마지막은 한 줄 차지 */
-@media (max-width: 1024px) {
-  .work-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px 28px;
+/* 1024↓ : 절대배치 → 그리드 전환 */
+@media (max-width:1024px){
+  .work-cards{
+    height:auto;
+    display:grid; grid-template-columns:repeat(2,1fr);
+    gap:36px 28px;
   }
-
-  .work-grid>.work-step:last-child {
-    grid-column: 1 / -1;
-    /* Grow+AI 한 줄 전체 */
-  }
-
-  .work-line {
-    height: 100px;
-  }
+  .work-step{ position:static; transform:none; width:auto; }
 }
 
-/* 768↓: 1칼럼, 가운데 정렬, 폰트/뱃지 더 축소 */
-@media (max-width: 768px) {
-  .work-grid {
-    grid-template-columns: 1fr;
-    gap: 28px;
-    text-align: center;
-  }
-
-  .work-title {
-    justify-content: center;
-    font-size: 38px;
-  }
-
-  .grow-row {
-    justify-content: center;
-  }
-
-  .work-underline {
-    margin-inline: auto;
-  }
-
-  .work-desc {
-    font-size: 16px;
-  }
-
-  .ai-badge {
-    width: 84px;
-    height: 84px;
-  }
-
-  .ai-text {
-    right: 18px;
-    top: 18px;
-    font-size: 42px;
-  }
-
-  .plus-vert {
-    height: 24px;
-    left: 11px;
-    top: 32px;
-  }
-
-  .plus-horz {
-    width: 24px;
-    top: 44px;
-  }
-
-  .work-line {
-    height: 84px;
-    margin-bottom: 24px;
-  }
+/* 768↓ : 한 칼럼 */
+@media (max-width:768px){
+  .work-cards{ grid-template-columns:1fr; gap:28px; text-align:center; }
+  .work-title{ justify-content:center; font-size:40px; }
+  .grow-row{ justify-content:center; }
+  .work-underline{ margin-inline:auto; }
+  .work-desc{ font-size:16px; max-width: 92vw; }
+  .ai-badge{ width:84px; height:84px; }
+  .ai-text{ right:18px; top:18px; font-size:42px; }
+  .plus-vert{ height:24px; left:11px; top:32px; }
+  .plus-horz{ width:24px; top:44px; }
 }
 
-/* 480↓: 더 작게 */
-@media (max-width: 480px) {
-  .work-title {
-    font-size: 32px;
-  }
-
-  .ai-badge {
-    width: 72px;
-    height: 72px;
-  }
-
-  .ai-text {
-    right: 15px;
-    top: 15px;
-    font-size: 36px;
-  }
-
-  .work-line {
-    height: 72px;
-  }
+/* 480↓ */
+@media (max-width:480px){
+  .work-title{ font-size:34px; }
+  .ai-badge{ width:72px; height:72px; }
+  .ai-text{ right:15px; top:15px; font-size:36px; }
 }
 
 /* === Service Header (Group 45/46) === */
@@ -1350,37 +1199,28 @@ body {
   .cta-band__title{ font-size: 22px; }
 }
 
-/* ===== Footer: 화면 가로로만 가득(풀-블리드) ===== */
+/* ================= Footer ================= */
 .site-footer{
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  width: 100vw;
-
   background:#fff;
+  /* CTA 띠 바로 아래에 붙이려면 margin-top:0; 필요하면 숫자 조절 */
   margin-top: 0;
   border-top: 0;
 }
 
-/* 내부 컨텐츠는 1200 그리드에 맞춤 */
 .footer-inner{
-  max-width: 1200px;          /* ← width 대신 max-width로 */
+  width: 1200px;             /* 페이지 그리드 */
   margin: 0 auto;
-  padding: 60px 0;            /* 좌우 0: 다른 섹션들과 라인 정확히 맞춤 */
+  padding: 60px 80px;        /* Figma: 60/80 */
   display: flex;
   align-items: center;
-  gap: 24px;                  /* 로고-링크 간격 */
+  gap: 24px;                 /* Figma gap */
 }
 
-/* 로고 이미지: CSS가 최종 크기를 결정 */
 .footer-logo img{
-  /* JSX width/height는 내재 크기용. 실제 렌더 크기는 아래 CSS가 결정 */
-  height: 40px;               /* Figma 36px이면 36으로, 작아 보이면 40 추천 */
-  width: auto;                /* 가로는 비율 유지 */
-  max-width: none;            /* 전역 img{max-width:100%} 무효화 */
-  display: block;
+  
+  display:block;
+  width:324px;
+  height:auto;               /* 비율 유지 */
 }
 
 /* 오른쪽 영역 */
@@ -1388,17 +1228,18 @@ body {
   display:flex;
   flex-direction:column;
   align-items:flex-start;
-  gap:8px;
+  gap:8px;                   /* Figma: 8px */
 }
 
 /* 링크 줄 */
 .footer-links{
   display:flex;
   align-items:center;
-  gap:24px;
+  gap:24px;                  /* Figma: 40px */
   list-style:none;
   padding:0; margin:0;
 }
+
 .footer-links a{
   font-family:'Noto Sans KR',sans-serif;
   font-weight:500;
@@ -1421,14 +1262,9 @@ body {
 
 /* 반응형 */
 @media (max-width: 900px){
-  .footer-inner{
-    max-width: none;
-    padding: 32px 24px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-  }
-  .footer-logo img{ height: 32px; } /* 모바일에서 살짝 축소 */
-  .footer-links{ flex-wrap: wrap; gap: 16px 24px; }
+  .footer-inner{ width:auto; padding:32px 24px; flex-direction:column; align-items:flex-start; gap:24px; }
+  .footer-logo img{ width:240px; }
+  .footer-links{ flex-wrap:wrap; gap:16px 24px; }
 }
+
 
