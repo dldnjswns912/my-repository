@@ -56,7 +56,7 @@ const MainInfo = () => {
         </p>
       </section>
 
-      <div className="about-container">
+      <div className="about-container" id="intro">
         <img src="/teaching.png" alt="teaching" className="about-image" />
         <div className="about-text">
           <div className="about-label">
@@ -202,7 +202,7 @@ const MainInfo = () => {
         <span className="svc-head__dot" aria-hidden="true"></span>
       </div>
 
-      <section className="svc-card">
+      <section className="svc-card" id="service">
         <div className="svc-left">
           {/* 아이콘 */}
           <div className="svc-icon">
@@ -396,7 +396,7 @@ const MainInfo = () => {
         </div>
       </section>
 
-      <section className="contact" aria-labelledby="contact-title">
+      <section className="contact" id="info" aria-labelledby="contact-title">
         <div className="contact__head">
           <div className="contact__left">
             <h3 id="contact-title" className="contact__title">Contact us</h3>

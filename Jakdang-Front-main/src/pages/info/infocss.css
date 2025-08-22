@@ -83,6 +83,16 @@ body {
   /* 헤더 아래에 위치하도록 낮춤 */
 }
 
+#intro, #service, #info {
+  scroll-margin-top: 96px;   /* 헤더 높이만큼 보정. 80~120px 사이에서 조절 가능 */
+}
+
+@media (max-width: 900px){
+  #intro, #service, #info { scroll-margin-top: 72px; }
+}
+
+
+
 /* 제목 부분 */
 .section-hero {
   position: relative;
