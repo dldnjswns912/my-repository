@@ -360,6 +360,42 @@ const MainInfo = () => {
   </div>
 </section>
 
+<section className="svc-manage" aria-labelledby="manage-title">
+  {/* 왼쪽 카드 */}
+  <div className="manage-card">
+    {/* Ellipse 장식(맨 위) */}
+    <span aria-hidden className="blob blob-lg"></span>
+    <span aria-hidden className="blob blob-sm"></span>
+
+    {/* image 684 */}
+    <img
+      src="/service_teamflow.png"
+      alt="팀플로우 서비스 화면"
+      className="manage-phone"
+      width="302" height="451"
+      loading="lazy" decoding="async"
+    />
+
+    {/* image 685 */}
+    <img
+      src="/project_setting.png"
+      alt="프로젝트 설정 보드"
+      className="manage-board"
+      width="1024" height="254"
+      loading="lazy" decoding="async"
+    />
+  </div>
+
+  {/* 오른쪽 텍스트 */}
+  <div className="manage-copy">
+    <h3 id="manage-title" className="manage-title">프로젝트 관리도 한번에 관리</h3>
+    <p className="manage-desc">
+      프로젝트 관리도 효율적으로 할 수 있도록 팀플로우 서비스를 함께 제공합니다.
+      팀프로젝트를 진행하면서 명확하고 체계적으로 진행상황을 공유할 수 있도록 했습니다.
+    </p>
+  </div>
+</section>
+
 
       {/* GUIDE (3 box) */}
       <div className="guide">

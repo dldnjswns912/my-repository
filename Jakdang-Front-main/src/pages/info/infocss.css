@@ -1111,6 +1111,94 @@ body {
   .svc-allin .allin-copy{ max-width: none; }
 }
 
+/* 레이아웃(관리 섹션) */
+.svc-manage{
+  width: 1200px;
+  margin: 64px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+/* 카드 프레임 (Frame 16983) */
+.manage-card{
+  position: relative;
+  width: 663px;
+  height: 516px;
+  background: #FFF7E6;
+  border-radius: 28px;
+  overflow: hidden;               /* 685는 주황박스까지만 보이게 */
+}
+
+/* image 684 (service_teamflow.png) */
+.manage-phone{
+  position: absolute;
+  left: calc(50% - 301.71px/2 - 120.5px);
+  top: 65px;
+  width: 301.71px;
+  height: 451px;
+  object-fit: cover;
+  border: 10px solid #FFFFFF;
+  border-radius: 35px 35px 0 0;
+  z-index: 1;
+  display: block;
+}
+
+/* image 685 (project_setting.png) */
+.manage-board{
+  position: absolute;
+  left: 92px;
+  top: 229px;
+  width: 1024.23px;
+  height: 254px;
+  object-fit: cover;
+  z-index: 2;                     /* 폰 아래, 원 아래 */
+  display: block;
+}
+
+/* Ellipse 5,6 (맨 위로) */
+.manage-card .blob{
+  position: absolute;
+  background: #FF0707;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 4;                     /* 최상단 */
+  pointer-events: none;
+}
+.manage-card .blob-lg{ width: 88px; height: 88px; left: 88px; top: 41px; }
+.manage-card .blob-sm{ width: 52px; height: 52px; left: 106px; top: 59px; }
+
+/* 오른쪽 텍스트 (관리) */
+.manage-copy{ flex: 1; max-width: 455px; }
+.manage-title{
+  margin: 0 0 12px;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #4A2F14;
+}
+.manage-desc{
+  margin: 0;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 400;
+  font-size: 18px;               /* 섹션들 통일 */
+  line-height: 1.8;
+  color: #333333;
+  text-align: left;
+  word-break: keep-all;
+}
+
+/* 반응형(선택) */
+@media (max-width: 900px){
+  .svc-manage{
+    width: auto;
+    margin: 48px 24px 0;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .manage-copy{ max-width: none; }
+}
 
 /* Mobile Service 소개 */
 .mobile-section {
