@@ -278,6 +278,89 @@ const MainInfo = () => {
       </section>
 
 
+<section className="svc-split svc-split--chan" aria-labelledby="chan-title">
+  {/* 좌측 카드 */}
+  <div className="svc-split__media">
+    {/* 빨간 원 2개 (배경 장식) */}
+    <span aria-hidden className="blob blob-lg"></span>
+    <span aria-hidden className="blob blob-sm"></span>
+
+    {/* 폰 화면 */}
+    <img
+      src="/main_open.png"              /* image 677 */
+      alt="메인 오픈 화면"
+      className="split-phone"
+      width="374"
+      height="450"
+      loading="lazy"
+      decoding="async"
+    />
+
+    {/* 툴바 */}
+    <img
+      src="/tools.png"                  /* image 678 */
+      alt="채널 도구 바"
+      className="split-tools"
+      width="611"
+      height="55"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+
+  {/* 우측 텍스트 */}
+  <div className="svc-split__copy">
+    <h3 id="chan-title" className="svc-split__title">활발한 소통이 이뤄지는 채널식 커뮤니티</h3>
+    <p className="svc-split__desc lead">
+      학생들이 자유롭게 질문하고 소통하며, 서로의 경험을 공유하고 성장할 수 있는 유연한 커뮤니티 공간을 만듭니다.
+    </p>
+    <p className="svc-split__desc">
+      교육기관도 이 공간에서 학생들과 실시간으로 연결됩니다.
+    </p>
+  </div>
+</section>
+
+{/* 고양이 부분 */}
+<section className="svc-allin" aria-labelledby="allin-title">
+  {/* 좌측 텍스트 */}
+  <div className="allin-copy">
+    <h3 id="allin-title" className="allin-title">더 쉽고 간편한 올인원 서비스</h3>
+    <p className="allin-desc">
+      기존 복잡한 교육 관리 시스템을 탈피해 직관적이고 간단한 인터페이스를 제공합니다.
+      학생도, 관리자도 모두 쉽게 사용할 수 있어 학습과 소통에만 집중할 수 있습니다.
+    </p>
+  </div>
+
+  {/* 우측 카드 */}
+  <div className="allin-media allin-card">
+    {/* 빨간 원 2개 */}
+    <span aria-hidden className="blob blob-lg"></span>
+    <span aria-hidden className="blob blob-sm"></span>
+
+    {/* image 680 */}
+    <img
+      src="/tools_chating.png"
+      alt="툴 메뉴"
+      className="allin-menu"
+      width="239"
+      height="348"
+      loading="lazy"
+      decoding="async"
+    />
+    {/* image 686 */}
+    <img
+      src="/cat_chating.png"
+      alt="채팅 화면"
+      className="allin-phone"
+      width="252"
+      height="410"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</section>
+
+
       {/* GUIDE (3 box) */}
       <div className="guide">
         <div className="guide-box">

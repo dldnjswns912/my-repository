@@ -912,6 +912,206 @@ body {
   .svc-strap__text .br-desktop{ display:none; }
 }
 
+/* 전체 레이아웃 */
+.svc-split.svc-split--chan{
+  width: 1200px;
+  margin: 80px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+/* 좌측 카드 (Frame 16978) */
+.svc-split--chan .svc-split__media{
+  position: relative;
+  width: 663px;
+  height: 516px;
+  background: #FFF7E6;
+  border-radius: 28px;
+  overflow: hidden; /* 그림자/이미지 넘침 방지(원하면 제거) */
+}
+
+/* 폰 (image 677) */
+.svc-split--chan .split-phone{
+  position: absolute;
+  left: 144px;
+  top: 66px;
+  width: 374.49px;
+  height: 450px;
+  border: 10px solid #FFFFFF;
+  border-radius: 35px 35px 0 0;
+  display: block;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* 툴바 (image 678) */
+.svc-split--chan .split-tools{
+  position: absolute;
+  left: 26px;
+  top: 232px;
+  width: 611px;
+  height: 55px;
+  border-radius: 18px;
+  display: block;
+  filter: drop-shadow(0 0 10px #FF8A00);
+  z-index: 2; /* 원 위/폰 위로 */
+}
+
+/* Ellipse 5,6 (빨간 원) */
+.svc-split--chan .blob{
+  position: absolute;
+  background: #FF0707;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 3; /* 툴바 아래, 배경 위 */
+}
+.svc-split--chan .blob-lg{ /* Ellipse 5 */
+  width: 88px; height: 88px;
+  left: 144px; top: 216px;
+}
+.svc-split--chan .blob-sm{ /* Ellipse 6 */
+  width: 52px; height: 52px;
+  left: 162px; top: 234px;
+}
+
+/* 오른쪽 카피 (Frame 16974) */
+.svc-split--chan .svc-split__copy{ flex: 1; }
+.svc-split--chan .svc-split__title{
+  width: 455px;
+  margin: 0 0 12px;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #4A2F14;
+}
+.svc-split--chan .svc-split__desc{
+  width: 469px;
+  margin: 0 0 8px;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #333333;
+  text-align: left;
+  word-break: keep-all;
+}
+
+/* 첫 문단을 딱 3줄 느낌으로 맞춤 */
+.svc-split--chan .svc-split__desc.lead{
+  width: auto;             /* 고정폭(469px) 해제 */
+  max-width: 520px;        /* ← 3줄 맞추는 폭. 500~540px 사이에서 미세조정 OK */
+  text-wrap: balance;      /* 줄 너비 균형(지원 브라우저에서) */
+  word-break: keep-all;    /* 한국어 단어 나눔 최소화 */
+}
+
+/* (선택) 좁은 화면 스택 */
+@media (max-width: 900px){
+  .svc-split.svc-split--chan{
+    width: auto;
+    margin: 48px 24px 0;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .svc-split--chan .svc-split__media{ width: 100%; }
+  .svc-split--chan .svc-split__desc, 
+  .svc-split--chan .svc-split__title{ width: 100%; }
+}
+
+/* 섹션 레이아웃 (고유 클래스) */
+.svc-allin{
+  width: 1200px;
+  margin: 80px auto 0;
+  display: flex;
+  align-items: center;
+  gap: 64px;
+}
+
+/* 좌측 텍스트 — 이전 확정값과 동일 */
+.svc-allin .allin-copy{ flex: 1; max-width: 455px; }
+.allin-title{
+  margin: 0 0 12px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.5;
+  color: #4A2F14;
+}
+.allin-desc{
+  margin: 0;
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+  font-weight: 400;
+  font-size: 18px;        /* 최종 확정값 */
+  line-height: 1.8;       /* 최종 확정값 */
+  color: #333;
+  text-align: left;
+  word-break: keep-all;
+}
+
+/* 우측 카드(배경 프레임) — Figma: 663x516 */
+.allin-card{
+  position: relative;
+  width: 663px;
+  height: 516px;
+  background: #FFF7E6;
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* image 680 (툴 메뉴) — Figma 좌표 */
+.allin-menu{
+  position: absolute;
+  left: 71px;
+  top: 0px;
+  width: 238.66px;
+  height: 348px;
+  object-fit: cover;
+  border-radius: 0 0 30px 30px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+  z-index: 2;
+  display: block;
+}
+
+/* image 686 (폰) — Figma 좌표 */
+.allin-phone{
+  position: absolute;
+  left: 340px;
+  top: 174px;
+  width: 252px;
+  height: 410px;
+  object-fit: cover;
+  border: 10px solid #FFFFFF;
+  border-radius: 20px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+  z-index: 2;
+  display: block;
+}
+
+/* Ellipse 5,6 — 맨 위로 */
+.allin-card .blob{
+  position: absolute;
+  background: #FF0707;
+  opacity: 0.1;
+  border-radius: 50%;
+  z-index: 3;                 /* 이미지들 위 */
+  pointer-events: none;
+}
+.allin-card .blob-lg{ width: 88px; height: 88px; left: 107px; top: 50px; }
+.allin-card .blob-sm{ width: 52px; height: 52px; left: 125px; top: 68px; }
+
+/* 반응형(선택) */
+@media (max-width: 900px){
+  .svc-allin{
+    width: auto;
+    margin: 48px 24px 0;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .svc-allin .allin-copy{ max-width: none; }
+}
+
+
 /* Mobile Service 소개 */
 .mobile-section {
   margin-bottom: 80px;
